@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+const baseURL = process.env.NODE_ENV === 'development'
+? 'http://192.168.2.102:3333'
+: 'https://nlw-proffy-api-rest.herokuapp.com/';
+
+console.log(baseURL);
+
 const api = axios.create({
-  baseURL: 'http://localhost:3333',
+  baseURL,
 });
 
 export default api;
